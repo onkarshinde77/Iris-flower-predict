@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import streamlit as st
-from sklearn.ensemble import RandomForestClassifier
+from scikit-learn.ensemble import RandomForestClassifier
 
 st.set_page_config(
     page_title="Iris Flower Prediction",

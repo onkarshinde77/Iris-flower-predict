@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import streamlit as st
+pip install scikit-learn
 from sklearn.ensemble import RandomForestClassifier
 
 st.set_page_config(

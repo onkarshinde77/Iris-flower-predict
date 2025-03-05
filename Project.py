@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import streamlit as st
-from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 
 st.set_page_config(
@@ -13,23 +12,13 @@ st.set_page_config(
 
 st.title('Iris Flower Prediction')
 st.image('type_of_iris.jpg', width=500)
-# st.write(st.image('type_of_iris.jpg',width=500))
 
 setosa = 'setosa.jpg'
 versicolor = 'versicolor.jpg'
 virginica = 'virginica.jpg'
 flower_type = [setosa, versicolor, virginica]
 
-@st.cache_data
-def loadDataset():
-    iris = load_iris()
-    df = pd.DataFrame(iris.data, columns=iris.feature_names)
-    df['target'] = iris.target
-    return df, iris.target_names
-
-df, target_names = loadDataset()
-# st.write(df)
-# st.write(target_names)
+df, target_names =pd.read_csv('iris.csv'), ['setosa', 'versicolor', 'virginica']
 
 model = RandomForestClassifier()
 model.fit(df.iloc[:, :-1], df['target'])

@@ -1,3 +1,5 @@
+import sys
+print("Python version:", sys.version)
 import os
 os.system("pip install --no-cache-dir scikit-learn")
 import numpy as np
